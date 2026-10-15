@@ -36,20 +36,20 @@ const Footer = () => {
             </li>
             <li>
 
-              <Link to="/pandents" className="hover:text-amber-400 transition-colors">
+              <Link to="/pendants" className="hover:text-amber-400 transition-colors">
                 📿 Pendants Collection
               </Link>
             </li>
             <li>
 
               <Link to="/jewelry" className="hover:text-amber-400 transition-colors">
-                ✨ Display Jewelry
+                ✨  Jewelry
               </Link>
             </li>
             <li>
-              <link to="/JewelrySlider" className="hover:text-amber-400 transition-colors">
+              <Link to="/display" className="hover:text-amber-400 transition-colors">
                 💒 Wedding & Engagement Bands
-              </link>
+              </Link>
             </li>
           </ul>
         </div>

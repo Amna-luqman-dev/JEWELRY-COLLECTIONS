@@ -9,7 +9,9 @@ import JewelryShowcase from './component/JewelryShowcase';
 import Footer from './component/Footer';
 import RingCollection from './component/RingCollection';
 import PandentCollection from './component/PandentCollection';
-
+import Login from './Auth/Login.jsx';
+import Register from './Auth/Register.jsx';
+// import PandentCollection from './components/PandentCollection';
 function App() {
   const [cartCount, setCartCount] = useState(2);
 
@@ -21,7 +23,10 @@ function App() {
 
         {/* Yahan Routes ke zariye alag-alag pages handle honge */}
         <div className="flex-grow">
+          
           <Routes>
+<Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
             {/* Home Page (Jab URL sirf '/' ho) */}
             <Route 
               path="/" 
@@ -36,7 +41,7 @@ function App() {
 
             {/* Baqi components ke apne routes */}
             <Route path="/display" element={<Display />} />
-            <Route path="/jewelryDisplay" element={<JewelryDisplay />} />
+            <Route path="/jewelry" element={<JewelryDisplay />} />
             <Route path="/rings" element={<RingCollection />} />
             <Route path="/pendants" element={<PandentCollection />} />
           </Routes>

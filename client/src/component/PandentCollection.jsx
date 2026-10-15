@@ -2,12 +2,12 @@ import React from 'react';
 
 // Sample Ring Collection Data
 const pandentCollections = [
-  { id: 1, name: "Heart lovely", price: "Rs. 45,000", image: "/assets/pandent1.jpeg" },
-  { id: 2, name: "Silver Solitaire Ring", price: "Rs. 15,000", image: "/assets/pandent2.jpeg" },
-  { id: 3, name: "Peach hear Pandent", price: "Rs. 25,000", image: "/assets/pandent3.jpeg" },
-  { id: 4, name: "Emerald Cut Ring", price: "Rs. 50,000", image: "/assets/pandent4.jpeg" },
-  { id: 5, name: "Platinum Wedding Band", price: "Rs. 60,000", image: "/assets/pandent5.jpeg" },
-  { id: 6, name: "Vintage Ruby Ring", price: "Rs. 35,000", image: "/assets/pandent6.jpeg" },
+  { id: 1, name: "Heart lovely", price: "Rs. 45,000", image: "../assets/pandent1.jpeg" },
+  { id: 2, name: "Silver Solitaire Ring", price: "Rs. 15,000", image: "../assets/pandent2.jpeg" },
+  { id: 3, name: "Peach hear Pandent", price: "Rs. 25,000", image: "../assets/pandent3.jpeg" },
+  { id: 4, name: "Emerald Cut Ring", price: "Rs. 50,000", image: "../assets/pandent4.jpeg" },
+  { id: 5, name: "Platinum Wedding Band", price: "Rs. 60,000", image: "../assets/pandent5.jpeg" },
+  { id: 6, name: "Vintage Ruby Ring", price: "Rs. 35,000", image: "../assets/pandent6.jpeg" },
 ];
 
 const PandentCollection= () => {

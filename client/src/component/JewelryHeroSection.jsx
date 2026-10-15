@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const JewelryHeroSection = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-10">
@@ -46,13 +46,13 @@ const JewelryHeroSection = () => {
           </p>
 
           <div className="pt-2">
-            <a
+            <Link
               href="/designs"
               className="inline-flex items-center gap-3 px-7 py-3.5 bg-amber-900 hover:bg-amber-800 text-amber-50 font-medium text-sm sm:text-base rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
               View Our Designs
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
         </div>
 

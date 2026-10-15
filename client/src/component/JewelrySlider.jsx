@@ -24,7 +24,7 @@ const JewelrySlider = () => {
     },
     {
       id: 4,
-      image: "/assets/new 5.jpag",
+      image: "/assets/new 5.jpeg",
       title: "Exclusive Gold Bracelets",
       subtitle: "New Arrivals in Store",
     },
@@ -53,11 +53,12 @@ const JewelrySlider = () => {
 
   // Auto-play feature (Har 4 seconds mein image change hogi)
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      nextSlide();
-    }, 2000);
-    return () => clearInterval(slideInterval);
-  }, [currentIndex]);
+  const slideInterval = setInterval(() => {
+    nextSlide();
+  }, 2000);
+
+  return () => clearInterval(slideInterval);
+}, [currentIndex]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
