@@ -14,7 +14,7 @@ const Footer = () => {
               className="w-10 h-10 object-contain rounded-full bg-white p-1"
               onError={(e) => { e.target.style.display = 'none'; }}
             />
-            <span className="text-2xl font-bold tracking-wide text-amber-400">
+            <span className="text-2xl font-bold tracking-wide text-amber-600 hover:text-amber-700">
               IQRA Jewelry
             </span>
           </div>

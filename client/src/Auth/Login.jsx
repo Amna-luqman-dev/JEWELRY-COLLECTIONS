@@ -63,14 +63,14 @@ const Login = () => {
           </div>
 
           <div className="text-right">
-            <Link to="/forgot-password" className="text-sm text-pink-600 hover:underline">
+            <Link to="/forgot-password" className="text-sm text-amber-800 hover:underline">
               Forgot Password?
             </Link>
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-pink-600 py-3 font-semibold text-white transition hover:bg-pink-700"
+            className="w-full rounded-lg bg-amber-800 py-3 font-semibold text-white transition hover:bg-amber-700"
           >
             Login
           </button>
@@ -78,7 +78,7 @@ const Login = () => {
 
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{' '}
-          <Link to="/register" className="font-semibold text-pink-600 hover:underline">
+          <Link to="/register" className="font-semibold text-amber-800 hover:underline">
             Register
           </Link>
         </p>
