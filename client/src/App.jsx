@@ -32,6 +32,7 @@ function App() {
               path="/" 
               element={
                 <>
+                <Display />
                   <JewelryHeroSection />
                   <JewelryShowcase />
                   <JewelrySlider />

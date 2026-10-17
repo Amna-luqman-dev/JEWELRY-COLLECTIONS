@@ -48,6 +48,11 @@ const Navbar = ({ cartCount = 0 }) => {
               <Search className="absolute left-3.5 top-2.5 h-4 w-4 text-amber-700" />
             </form>
           </div>
+          {/* links */}
+          <div className="className">
+<link to="pendents" Pendents />
+
+          </div>
 
           {/* 3. Action Icons & Auth (Desktop) */}
           <div className="hidden md:flex items-center space-x-6">
