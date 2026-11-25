@@ -1,32 +1,41 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// ✅ 1. Sab se upar images ko import karein (exact spelling & extension ke saath)
+import ring2Img from '/assets/ring2.jpeg';
+import pandent3Img from '/assets/pandent3.jpeg';
+import diamondStudImg from '/assets/diamondstud.webp';
+import new5Img from '/assets/new5.jpeg'; // (Behtar hai file ka naam new5.jpeg kar dein)
+
 const JewelrySlider = () => {
   const navigate = useNavigate();
-  // 4 Images ka array
+
+  // ✅ 2. Ab string ki jagah imported variable use karein (bina quotes ke)
   const slides = [
     {
       id: 1,
-      image: "/assets/ring2.jpeg",
+      image: ring2Img,
       title: "Royal Diamond Collection",
       subtitle: "Up to 30% OFF on Bridal Sets",
     },
     {
       id: 2,
-      image: "/assets/pandent3.jpeg",
+      image: pandent3Img,
       title: "Handcrafted Gold Necklaces",
       subtitle: "Pure 22K Gold Fine Jewelry",
     },
     {
       id: 3,
-      image: "/assets/diamondstud.webp",
+      image: diamondStudImg,
       title: "Luxury Diamond Studs",
       subtitle: "Elegance for Every Occasion",
     },
     {
       id: 4,
-      image: "/assets/new 5.jpeg",
+      image: new5Img,
       title: "Exclusive Gold Bracelets",
       subtitle: "New Arrivals in Store",
     },

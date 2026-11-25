@@ -1,17 +1,22 @@
 import React from 'react';
+import pandent1 from '/assets/pandent1.jpeg';
+import pandent2 from '/assets/pandent2.jpeg';
+import pandent3 from '/assets/pandent3.jpeg';
+import pandent4 from '/assets/pandent4.jpeg';
+import pandent5 from '/assets/pandent5.jpeg';
+import pandent6 from '/assets/pandent6.jpeg';
 
-// Sample Ring Collection Data
 const pandentCollections = [
-  { id: 1, name: "Heart lovely", price: "Rs. 45,000", image: "../assets/pandent1.jpeg" },
-  { id: 2, name: "Silver Solitaire Ring", price: "Rs. 15,000", image: "../assets/pandent2.jpeg" },
-  { id: 3, name: "Peach hear Pandent", price: "Rs. 25,000", image: "../assets/pandent3.jpeg" },
-  { id: 4, name: "Emerald Cut Ring", price: "Rs. 50,000", image: "../assets/pandent4.jpeg" },
-  { id: 5, name: "Platinum Wedding Band", price: "Rs. 60,000", image: "../assets/pandent5.jpeg" },
-  { id: 6, name: "Vintage Ruby Ring", price: "Rs. 35,000", image: "../assets/pandent6.jpeg" },
+  { id: 1, name: "Heart lovely", price: "Rs. 45,000", image: pandent1 },
+  { id: 2, name: "Silver Solitaire Ring", price: "Rs. 15,000", image: pandent2 },
+  { id: 3, name: "Peach hear Pandent", price: "Rs. 25,000", image: pandent3 },
+  { id: 4, name: "Emerald Cut Ring", price: "Rs. 50,000", image: pandent4 },
+  { id: 5, name: "Platinum Wedding Band", price: "Rs. 60,000", image: pandent5 },
+  { id: 6, name: "Vintage Ruby Ring", price: "Rs. 35,000", image: pandent6 },
 ];
 
-const PandentCollection= () => {
-  return (
+const PandentCollection = () => {
+ return (
     <div className="max-w-6xl mx-auto p-6">
       <h2 className="text-3xl font-bold text-center mb-8">Pandent Collection</h2>
       
@@ -37,6 +42,6 @@ const PandentCollection= () => {
       </div>
     </div>
   );
-};
-
+}
+ 
 export default PandentCollection;
