@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-
+const userRoutes = require('./routes/userRoutes');
 // Environment variables configuration
 dotenv.config();
 
@@ -12,6 +12,7 @@ const app = express();
 
 // Middleware taake JSON data ko read kiya ja sake
 app.use(express.json());
+app.use('/api/users', userRoutes);
 
 // Test route
 app.get('/', (req, res) => {

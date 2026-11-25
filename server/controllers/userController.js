@@ -1,39 +1,48 @@
-const User = require('../models/userModel');
+const User = require('../models/User'); // Apne User model ka sahi path check kar lein
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
-// @desc    Register new user
-// @route   POST /api/users/register
-// @access  Public
+// JWT Token generate karne ka function
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+};
+
+// 1. Naya User Register Karna (POST /api/users/register)
 const registerUser = async (req, res) => {
     try {
-        const { fullName, email, phone, password } = req.body;
+        const { name, email, phone, password } = req.body;
 
-        // Check karein ke saari fields mojood hain ya nahi
-        if (!fullName || !email || !phone || !password) {
-            return res.status(400).json({ message: 'Please add all fields' });
+        // Check karein ke saari fields bhari hain ya nahi
+        if (!name || !email || !phone || !password) {
+            return res.status(400).json({ message: 'Please fill all fields' });
         }
 
-        // Check karein ke email pehle se registered toh nahi
+        // Check karein ke user pehle se mojood to nahi
         const userExists = await User.findOne({ email });
         if (userExists) {
-            return res.status(400).json({ message: 'User already exists' });
+            return res.status(400).json({ message: 'User already exists with this email' });
         }
 
-        // Database mein naya user create karein
-        // (Note: Aap ke Register form mein fullName, email, phone, password hain)
+        // Password ko encrypt (hash) karein
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        // Naya user database mein banayein
         const user = await User.create({
-            name: fullName,
+            name,
             email,
             phone,
-            password,
+            password: hashedPassword,
         });
 
         if (user) {
             res.status(201).json({
-                _id: user._id,
-                fullName: user.name,
+                _id: user.id,
+                name: user.name,
                 email: user.email,
                 phone: user.phone,
-                message: 'User registered successfully!',
+                isAdmin: user.isAdmin,
+                token: generateToken(user._id),
             });
         } else {
             res.status(400).json({ message: 'Invalid user data' });
@@ -43,27 +52,23 @@ const registerUser = async (req, res) => {
     }
 };
 
-// @desc    Authenticate a user (Login)
-// @route   POST /api/users/login
-// @access  Public
+// 2. User Login Karna (POST /api/users/login)
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        // Check karein ke email aur password diya hai ya nahi
-        if (!email || !password) {
-            return res.status(400).json({ message: 'Please add all fields' });
-        }
-
-        // Check karein ke user database mein mojood hai ya nahi
+        // Email se user dhundein
         const user = await User.findOne({ email });
 
-        if (user && user.password === password) {
+        // Password match karein
+        if (user && (await bcrypt.compare(password, user.password))) {
             res.json({
-                _id: user._id,
+                _id: user.id,
                 name: user.name,
                 email: user.email,
-                message: 'Login successful!',
+                phone: user.phone,
+                isAdmin: user.isAdmin,
+                token: generateToken(user._id),
             });
         } else {
             res.status(401).json({ message: 'Invalid email or password' });
@@ -73,7 +78,4 @@ const loginUser = async (req, res) => {
     }
 };
 
-module.exports = {
-    registerUser,
-    loginUser,
-};
+module.exports = { registerUser, loginUser };
