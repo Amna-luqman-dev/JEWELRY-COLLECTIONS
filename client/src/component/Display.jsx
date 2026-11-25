@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Contact } from 'lucide-react';         // Icons yahan se aayenge
 import { useNavigate } from 'react-router-dom';
 export default function Display() {
@@ -8,6 +9,7 @@ const navigate = useNavigate();
 
   return (
     <div>
+      
        <main className="relative w-full h-[75vh] flex flex-col items-center justify-center overflow-hidden">
   {/* 1. Background Video */}
  <video

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const JewelrySlider = () => {
+  const navigate = useNavigate();
   // 4 Images ka array
   const slides = [
     {
@@ -83,9 +85,12 @@ const JewelrySlider = () => {
             <p className="text-lg md:text-2xl text-gray-200 mt-3 drop-shadow">
               {slides[currentIndex].subtitle}
             </p>
-            <button className="mt-6 px-6 py-2.5 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-full transition shadow-lg">
-              Shop Collection
-            </button>
+          <button 
+  onClick={() => navigate('/JewelrySlider')}
+  className="mt-6 px-6 py-2.5 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-full transition shadow-lg cursor-pointer"
+>
+  Shop Collection
+</button>
           </div>
         </div>
 

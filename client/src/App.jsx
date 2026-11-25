@@ -29,7 +29,7 @@ function App() {
           <Route path="/register" element={<Register />} />
             {/* Home Page (Jab URL sirf '/' ho) */}
             <Route 
-              path="/" 
+              path="/display" 
               element={
                 <>
                 <Display />
@@ -41,10 +41,16 @@ function App() {
             />
 
             {/* Baqi components ke apne routes */}
-            <Route path="/display" element={<Display />} />
-            <Route path="/jewelry" element={<JewelryDisplay />} />
-            <Route path="/rings" element={<RingCollection />} />
-            <Route path="/pendants" element={<PandentCollection />} />
+            
+
+<Route path="/jewelry" element={<JewelryDisplay />} />
+<Route path="/rings" element={<RingCollection />} />
+<Route path="/pendants" element={<PandentCollection />} />
+
+{/* ✅ Naya Route yahan add karein */}
+<Route path="/JewelrySlider" element={<JewelrySlider />} />
+<Route path="/jewelryHeroSection" element={<JewelryHeroSection />} />
+
           </Routes>
         </div>
 
